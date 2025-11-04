@@ -1,24 +1,25 @@
 #include<stdio.h>
 int main(){
-    int num,og,last,result=0;
-    printf("Enter a number to check");
-    scanf("%d",&num);
+    int a,b,c,d=0;
+    printf("Enter a number");
+    scanf("%d",&a);
 
-    og=num;
-    while (og!=0){
-        last=og%10;
-        result=result+(last*last*last);
-        og=og/10;
+    b=a;
+    while (b!=0){
+        c=b%10;
+        d=d+(c*c*c);
+        b=b/10;
 
     }
-    if (result==num){
-        printf("%d is Armstrong number\n",num);
+    if (d==a){
+        printf("%d is Armstrong number\n",a);
         
     }
     else {
-        printf("%d is not armstrong number\n",num);
+        printf("%d is not armstrong number\n",a);
 
     }
     return 0;
+
 
 }
