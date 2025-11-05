@@ -2,46 +2,47 @@
 
 int main() {
     
-    int scores[] = {45, 12, 88, 7, 63, 20, 91, 34, 50, 19};
-    int N = sizeof(scores) / sizeof(scores[0]);
+    int a[] = {45, 12, 88, 7, 63, 20, 91, 34, 50, 19};
+    int N = sizeof(a) / sizeof(a[0]);
   
-    int even_array[N];
-    int odd_array[N];
+    int b[N];
+    int c[N];
     
-    int even_count = 0;
-    int odd_count = 0;
+    int d = 0;
+    int e = 0;
     
     printf("--- Array Traversal and Splitting Program ---\n");
     printf("Original Scores Array:\n");
     for (int i = 0; i < N; i++) {
-        printf("%d ", scores[i]);
+        printf("%d ", a[i]);
     }
     printf("\n\n");
 
     for (int i = 0; i < N; i++) {
-        int current_score = scores[i];
+        int score = a[i];
         
-        if (current_score % 2 == 0) {           
-            even_array[even_count] = current_score;
-            even_count++;
+        if (score % 2 == 0) {           
+            b[d] = score;
+            d++;
         } else {           
-            odd_array[odd_count] = current_score;
-            odd_count++;
+            c[e] = score;
+            e++;
         }
     }
  
-    printf("Even Scores (%d total):\n", even_count);
-    for (int i = 0; i < even_count; i++) {
-        printf("%d ", even_array[i]);
+    printf("Even Scores (%d total):\n", d);
+    for (int i = 0; i < d; i++) {
+        printf("%d ", b[i]);
     }
     printf("\n");
  
-    printf("Odd Scores (%d total):\n", odd_count);
+    printf("Odd Scores (%d total):\n", e);
     
-    for (int i = 0; i < odd_count; i++) {
-        printf("%d ", odd_array[i]);
+    for (int i = 0; i < e; i++) {
+        printf("%d ", c[i]);
     }
     printf("\n");
 
     return 0;
 }
+
