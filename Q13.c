@@ -2,7 +2,7 @@
 
 int main() {
     
-    int arr[] = {1, 8, 3, 5, 2, 9};
+    int arr[] = {1, 2, 3, 8, 2, 9};
     int n = sizeof(arr) / sizeof(arr[0]);
     int i; 
 
@@ -40,3 +40,4 @@ int main() {
 
     return 0;
 }
+
