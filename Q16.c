@@ -2,48 +2,48 @@
 
 int main() {
 
-    const int MAX_SIZE = 10;
-    int arr[MAX_SIZE];
-    int current_size = 5; 
+    const int max = 10;
+    int arr[max];
+    int CS = 5; 
     int i; 
-    int element, choice, insertion_index = -1;
+    int E, choice, index = -1;
 
-    for (i = 0; i < current_size; i++) {
+    for (i = 0; i < CS; i++) {
         arr[i] = (i + 1) * 10;
     }
 
-    printf("--- Array Insertion ---\n");
-    printf("Initial Array (%d elements):\n[ ", current_size);
-    for (i = 0; i < current_size; i++) {
+    
+    printf("Initial Array (%d elemens):\n[ ", CS);
+    for (i = 0; i < CS; i++) {
 
-        printf("%d%s", arr[i], (i < current_size - 1) ? ", " : "");
+        printf("%d%s", arr[i], (i < CS - 1) ? ", " : "");
     }
     printf(" ]\n\n");
 
-    if (current_size >= MAX_SIZE) {
+    if (CS >= max) {
         printf("Error: Array is full.\n");
         return 1;
     }
 
     printf("Enter value to insert: ");
-    if (scanf("%d", &element) != 1) return 1;
+    if (scanf("%d", &E) != 1) return 1;
 
     printf("Position (1:Front, 2:Middle, 3:End): ");
     if (scanf("%d", &choice) != 1) return 1;
 
     switch (choice) {
         case 1:
-            insertion_index = 0;
+            index = 0;
             break;
         case 3:
-            insertion_index = current_size; 
+            index = CS; 
             break;
         case 2:
             
-            printf("Enter middle index (1 to %d): ", current_size - 1);
-            if (scanf("%d", &insertion_index) != 1) return 1;
+            printf("Enter middle index (1 to %d): ", CS - 1);
+            if (scanf("%d", &index) != 1) return 1;
 
-            if (insertion_index <= 0 || insertion_index >= current_size) {
+            if (index <= 0 || index >= CS) {
                 printf("Error: Invalid middle index.\n");
                 return 1;
             }
@@ -53,18 +53,19 @@ int main() {
             return 1;
     }
 
-    for (i = current_size; i > insertion_index; i--) {
+    for (i = CS; i > index; i--) {
         arr[i] = arr[i - 1];
     }
 
-    arr[insertion_index] = element;
-    current_size++;
+    arr[index] = E;
+    CS++;
 
-    printf("\nArray After Insertion (at index %d):\n[ ", insertion_index);
-    for (i = 0; i < current_size; i++) {
-        printf("%d%s", arr[i], (i < current_size - 1) ? ", " : "");
+    printf("\nArray After Insertion (at index %d):\n[ ", index);
+    for (i = 0; i < CS; i++) {
+        printf("%d%s", arr[i], (i < CS - 1) ? ", " : "");
     }
     printf(" ]\n");
 
     return 0;
 }
+
